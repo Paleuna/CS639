@@ -125,6 +125,8 @@ class foggyzurichDataSet(data.Dataset):
         image = PreprocessingLayer(image)
         #add preprocessing laryer here
 
+        image = np.asarray(image, np.float32)
+
         classes = np.unique(label)
         lbl = label.astype(float)
         lbl = np.array(Image.fromarray(lbl).resize((self.crop_size[1], self.crop_size[0])))

@@ -50,6 +50,8 @@ class cityscapesDataSet(data.Dataset):
         image = PreprocessingLayer(image)
         #add preprocessing laryer here
 
+        image = np.asarray(image, np.float32)
+
         size = image.shape
         image = image[:, :, ::-1]  # change to BGR
         image -= self.mean

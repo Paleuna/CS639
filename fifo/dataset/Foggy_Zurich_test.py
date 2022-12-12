@@ -11,6 +11,7 @@ from PIL import Image
 from os.path import join
 import json
 import scipy.misc as m
+import imageio
 
 class foggyzurichDataSet(data.Dataset):
     colors = [  # [  0,   0,   0],
@@ -109,7 +110,7 @@ class foggyzurichDataSet(data.Dataset):
         datafiles = self.files[index]
       
         image = Image.open(datafiles["img"]).convert('RGB')
-        label = m.imread(datafiles["label"])
+        label = imageio.imread(datafiles["label"])
         label = np.array(label, dtype=np.float32)
         name = datafiles["name"]
 

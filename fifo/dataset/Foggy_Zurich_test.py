@@ -122,7 +122,7 @@ class foggyzurichDataSet(data.Dataset):
 
         classes = np.unique(label)
         lbl = label.astype(float)
-        lbl = np.array(Image.fromarray(lbl).resize())
+        lbl = np.array(Image.fromarray(lbl).resize((self.crop_size[1], self.crop_size[0])))
         label = lbl.astype(int)
 
         size = image.shape

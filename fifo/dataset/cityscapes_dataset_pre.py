@@ -8,7 +8,7 @@ import torch
 import torchvision
 from torch.utils import data
 from PIL import Image
-from PreprocessingLayer import PreprocessingLayer 
+from PreprocessingLayer import *
 
 class cityscapesDataSet(data.Dataset):
 
@@ -45,7 +45,7 @@ class cityscapesDataSet(data.Dataset):
         w, h = image.size
 
         image = np.asarray(image, np.float32)
-        
+
         #add preprocessing laryer here
         image = PreprocessingLayer(image)
         #add preprocessing laryer here

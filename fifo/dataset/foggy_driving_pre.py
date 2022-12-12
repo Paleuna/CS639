@@ -11,7 +11,7 @@ from PIL import Image
 from os.path import join
 import json
 import scipy.misc as m
-from PreprocessingLayer import PreprocessingLayer 
+from PreprocessingLayer import *
 
 class foggydrivingDataSet(data.Dataset):
     colors = [  
@@ -114,7 +114,7 @@ class foggydrivingDataSet(data.Dataset):
             new_size = (int(w*self.scale), int(h*self.scale))
             image = image.resize(new_size, Image.BICUBIC)
         image = np.asarray(image, np.float32)
-        
+
         #add preprocessing laryer here
         image = PreprocessingLayer(image)
         #add preprocessing laryer here

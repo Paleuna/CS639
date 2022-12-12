@@ -11,7 +11,7 @@ from PIL import Image
 from os.path import join
 import json
 import scipy.misc as m
-from PreprocessingLayer import *
+from dataset.PreprocessingLayer import PreprocessingLayer
 
 class foggydrivingDataSet(data.Dataset):
     colors = [  

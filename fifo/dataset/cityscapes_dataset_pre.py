@@ -8,7 +8,7 @@ import torch
 import torchvision
 from torch.utils import data
 from PIL import Image
-from PreprocessingLayer import *
+from dataset.PreprocessingLayer import PreprocessingLayer
 
 class cityscapesDataSet(data.Dataset):
 

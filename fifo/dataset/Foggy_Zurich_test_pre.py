@@ -12,7 +12,7 @@ from os.path import join
 import json
 import scipy.misc as m
 import imageio
-from PreprocessingLayer import * 
+from dataset.PreprocessingLayer import PreprocessingLayer 
 
 class foggyzurichDataSet(data.Dataset):
     colors = [  # [  0,   0,   0],
